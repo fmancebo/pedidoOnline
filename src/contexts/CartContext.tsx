@@ -130,12 +130,12 @@ export function CartProvider({ children }: CartProviderProps) {
   }, [navigate]);
 
   const payOrder = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     (customer: CustomerData): void => {
-      console.log("payorder", cart, customer);
       // chamada de api para o back end
       clearCart(); // deve ser executado apos retorno psoitivo da API
     },
-    [cart, clearCart],
+    [clearCart],
   );
 
   const value = useMemo(
