@@ -1,6 +1,6 @@
 {
-  "short_name": "Aplicação React",
-  "name": "Templade Dev Samurai de aplicação React",
+  "short_name": "Food e-commerce",
+  "name": "Food e-commerce",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#1D1E21",
-  "background_color": "#141514"
+  "theme_color": "#f5f5f5",
+  "background_color": "#f5f5f5"
 }
