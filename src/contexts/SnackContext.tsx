@@ -24,19 +24,15 @@ function SnackProvider({ children }: SnackProviderProps) {
   useEffect(() => {
     (async () => {
       try {
-        const burgerRequest = await getBurgers();
-        const pizzaRequest = await getPizzas();
-        const drinksRequest = await getDrinks();
-        const iceCreamsRequest = await getIceCreams();
+        const burgerRequest = getBurgers;
+        const pizzaRequest = getPizzas;
+        const drinksRequest = getDrinks;
+        const iceCreamsRequest = getIceCreams;
 
         const requests = [burgerRequest, pizzaRequest, drinksRequest, iceCreamsRequest];
 
-        const [
-          { data: burgerResponse },
-          { data: pizzaResponse },
-          { data: drinksResponse },
-          { data: iceCreamsResponse },
-        ] = await Promise.all(requests);
+        const [burgerResponse, pizzaResponse, drinksResponse, iceCreamsResponse] =
+          await Promise.all(requests);
 
         setBurgers(burgerResponse);
         setPizzas(pizzaResponse);
@@ -53,6 +49,7 @@ function SnackProvider({ children }: SnackProviderProps) {
     () => ({ burgers, pizzas, drinks, iceCreams }),
     [burgers, pizzas, drinks, iceCreams],
   );
+
   return <SnackContext.Provider value={contextValue}>{children}</SnackContext.Provider>;
 }
 
